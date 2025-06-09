@@ -24,12 +24,13 @@ public class LoginActivity extends AppCompatActivity {
         EditText emailEditText = findViewById(R.id.emailEditText);
         Button loginButton = findViewById(R.id.loginButton);
         TextView signUpTextView = findViewById(R.id.signUpTextView);
+        Button homeButton = findViewById(R.id.homeButton);
+        TextView contactUsTextView = findViewById(R.id.contactUsTextView); // Add this line
 
         loginButton.setOnClickListener(v -> {
             String email = emailEditText.getText().toString();
 
             if (isValidEmail(email)) {
-                // Navigate to MainActivity on successful login
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
             } else {
@@ -39,6 +40,16 @@ public class LoginActivity extends AppCompatActivity {
 
         signUpTextView.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+            startActivity(intent);
+        });
+
+        homeButton.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+
+        contactUsTextView.setOnClickListener(v -> { // Add this block
+            Intent intent = new Intent(LoginActivity.this, ContactUsActivity.class);
             startActivity(intent);
         });
     }

@@ -21,7 +21,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
         EditText nameEditText = findViewById(R.id.nameEditText);
         EditText emailEditText = findViewById(R.id.emailEditText);
         EditText phoneEditText = findViewById(R.id.phoneEditText);
-        Button saveButton = findViewById(R.id.saveButton);
+        Button saveButton = findViewById(R.id.save);
         ImageButton profileButton = findViewById(R.id.profileButton);
         ImageButton bellButton = findViewById(R.id.bellButton);
         ImageButton homeButton = findViewById(R.id.homeButton);
@@ -61,7 +61,8 @@ public class UpdateProfileActivity extends AppCompatActivity {
 
         bellButton.setOnClickListener(v -> {
             // Handle bell button click
-            Toast.makeText(this, "Notifications clicked", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(UpdateProfileActivity.this, NotificationsActivity.class);
+            startActivity(intent);
         });
 
         homeButton.setOnClickListener(v -> {
